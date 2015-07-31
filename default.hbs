@@ -19,12 +19,12 @@
     {{! Open Graph & Twitter Cards }}
     <!-- <link rel="canonical" href="{{url absolute="true"}}">  -->
     <meta property="og:title" content="{{meta_title}}"/>
-    <meta property="og:description" content="{{@blog.description}}"/>
+    <meta property="og:description" content="{{meta_description}}"/>
     <!-- <meta property="og:url" content="{{url absolute="true"}}"/> -->
     <meta property="og:site_name" content="{{@blog.title}}">
     <meta property="twitter:card" content="summary"/> 
     <meta property="twitter:title" content="{{meta_title}}"/>
-    <meta property="twitter:description" content="{{@blog.description}}"/>
+    <meta property="twitter:description" content="{{meta_description}}"/>
     {{#if @blog.cover}}
     <meta property="og:image" content="{{@blog.url}}{{@blog.cover}}"/>
     <meta property="twitter:image" content="{{@blog.url}}{{@blog.cover}}"/>
@@ -37,10 +37,9 @@
     <section class="site-nav">
         <header>
             <nav id="navigation">
-                {{#if @blog.logo}}<a class="brand" href="/">
+                {{#if @blog.logo}}<a class="brand" href="{{@blog.url}}">
                     <img src="{{@blog.logo}}" alt="{{@blog.title}}">
                 </a>{{/if}}
-                <a href="{{@blog.url}}" class="home">Blog</a>
                 {{navigation}}
             </nav>
             {{! TODO: Tagline/link support }}
@@ -53,10 +52,9 @@
 
     <footer class="site-footer">
         <div class="container">
-            &copy; <script>document.write(new Date().getFullYear())</script><noscript>2013</noscript>
+            &copy; <script>document.write(new Date().getFullYear())</script><noscript>2015</noscript> {{@blog.title}}
             
             <nav>
-                <a href="{{@blog.url}}">Blog</a>
                 {{navigation}}
             </nav>
             
@@ -66,11 +64,9 @@
             </nav>
             
             <p><a href="https://github.com/jamesramsay/ghost-incorporated">Incorporated for Ghost</a> by <a href="https://jramsay.com.au">JR</a>. Proudly powered by <a class="poweredby icon-ghost" href="http://ghost.org">Ghost</a>.</p>
+
         </div>
     </footer>
-
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
 
     {{! The main JavaScript file for Incorporated }}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
