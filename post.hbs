@@ -3,10 +3,9 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
-{{! TODO: Add support for per article cover image }}
 <div class="article-cover">
     <div>
-        {{#if @blog.cover}}<img src="{{@blog.cover}}" class="image">{{/if}}
+        {{#if post.image}}<img src="{{post.image}}" class="image">{{/if}}
     </div>
 </div>
 
