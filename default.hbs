@@ -52,6 +52,8 @@
 
     <footer class="site-footer">
         <div class="container">
+            {{ghost_foot}}            
+
             &copy; <script>document.write(new Date().getFullYear())</script><noscript>2015</noscript> {{@blog.title}}
             
             <nav>
@@ -68,11 +70,8 @@
         </div>
     </footer>
 
-    <script type="text/javascript">
-        if (typeof jQuery == 'undefined') {
-            document.write('<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></'+'script>');
-        }
-    </script>
+    {{! JQuery }}
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
 
     {{! The main JavaScript file for Incorporated }}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
